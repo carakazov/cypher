@@ -1,0 +1,10 @@
+C:\Users\carak\source\repos\EncodingApp\EncodingApp\bin\Debug\EncodingApp.exe.config
+C:\Users\carak\source\repos\EncodingApp\EncodingApp\bin\Debug\EncodingApp.exe
+C:\Users\carak\source\repos\EncodingApp\EncodingApp\bin\Debug\EncodingApp.pdb
+C:\Users\carak\source\repos\EncodingApp\EncodingApp\obj\Debug\EncodingApp.csprojAssemblyReference.cache
+C:\Users\carak\source\repos\EncodingApp\EncodingApp\obj\Debug\EncodingApp.Properties.Resources.resources
+C:\Users\carak\source\repos\EncodingApp\EncodingApp\obj\Debug\EncodingApp.csproj.GenerateResource.cache
+C:\Users\carak\source\repos\EncodingApp\EncodingApp\obj\Debug\EncodingApp.csproj.CoreCompileInputs.cache
+C:\Users\carak\source\repos\EncodingApp\EncodingApp\obj\Debug\EncodingApp.exe
+C:\Users\carak\source\repos\EncodingApp\EncodingApp\obj\Debug\EncodingApp.pdb
+C:\Users\carak\source\repos\EncodingApp\EncodingApp\obj\Debug\EncodingApp.Form1.resources
