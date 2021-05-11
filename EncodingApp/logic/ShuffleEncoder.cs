@@ -4,7 +4,7 @@ using System.Text;
 
 namespace EncodingApp.logic
 {
-    public class ShuffleEncoder : IEncoder
+    public class ShuffleEncoder
     {
         private string key;
         private string sortedKey;
