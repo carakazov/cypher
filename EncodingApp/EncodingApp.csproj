@@ -52,12 +52,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="logic\GammaEncoder.cs" />
-    <Compile Include="logic\IEncoder.cs" />
     <Compile Include="logic\MatrixEncoder.cs" />
-    <Compile Include="logic\ShuffleEncoder.cs" />
-    <Compile Include="logic\Utils.cs" />
-    <Compile Include="logic\VigenereEncoder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

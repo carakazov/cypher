@@ -5,13 +5,25 @@ using System.Text;
 
 namespace EncodingApp.logic
 {
-    public class MatrixEncoder : IEncoder
+    public class MatrixEncoder
     {
-        private int[,] matrix = Utils.Matrix;
-        private int[,] inverseMatrix = Utils.InverseMatrix;
-        private string alphabet = Utils.CyrillicAlphabetWithSpecialChar;
+        private int[,] matrix = new int[,]
+        {
+            {1, 2, 5, 4},
+            {3, 13, 9, 7},
+            {2, 3, 5, 11},
+            {5, 6, -5, 29}
+        };
+        private int[,] inverseMatrix = new int[,]
+        {
+            {2096, -115, -1559, 330},
+            {-328, 45, 204, -43},
+            {3, -3, 43, -16},
+            {-293, 10, 234, -41}
+        };
+        private string alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя_ ";
         private char specialChar = '_';
-        private int divider = Utils.Divider;
+        private int divider = 283;
         private List<int[]> vectors;
         public string Encode(string plainText)
         {
