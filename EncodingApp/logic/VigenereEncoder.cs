@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EncodingApp.logic
 {
-    class VigenereEncoder : IEncoder
+    class VigenereEncoder 
     {
 
         private string key;
