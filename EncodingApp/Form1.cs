@@ -22,7 +22,7 @@ namespace EncodingApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            encoder = new GammaEncoder();
+            encoder = new GammaEncoder(textBox1.Text);
             richTextBox2.Text = encoder.Encode(richTextBox1.Text);
         }
 
