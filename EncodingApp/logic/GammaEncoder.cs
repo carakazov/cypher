@@ -7,40 +7,14 @@ namespace EncodingApp.logic
 {
     public class GammaEncoder
     {
-        private static Dictionary<char, string> gammaMatrix = new Dictionary<char, string>()
+        private static Dictionary<char, string> gammaMatrix = Utils.GammaMatrix;
+        private int[] gammaSequence;
+
+        public GammaEncoder(string key, bool russian)
         {
-            {'а',"000001"},
-            {'б',"001001"},
-            {'в',"001010"},
-            {'г',"001011"},
-            {'д',"001100"},
-            {'е',"000010"},
-            {'ж',"001101"},
-            {'з',"001110"},
-            {'и',"000011"},
-            {'к',"001111"},
-            {'л',"010000"},
-            {'м',"010001"},
-            {'н',"010010"},
-            {'о',"000100"},
-            {'п',"010011"},
-            {'р',"010100"},
-            {'с',"010101"},
-            {'т',"010110"},
-            {'у',"000101"},
-            {'ф',"010111"},
-            {'х',"011000"},
-            {'ц',"011001"},
-            {'ч',"011010"},
-            {'ш',"011011"},
-            {'щ',"011100"},
-            {'ы',"011101"},
-            {'ь',"011110"},
-            {'э',"000110"},
-            {'ю',"000111"},
-            {'я',"001000"},
-        };
-        private int[] gammaSequence = new[] {2, 3, 10, 4, 1, 5, 6, 7, 8, 11, 15, 14, 12, 13, 9, 0};
+            DefineGammaSequence(key, russian);
+        }
+        
         public string Encode(string plainText)
         {
             return EncodeOrDecode(plainText, true);
@@ -70,15 +44,11 @@ namespace EncodingApp.logic
                     string result;
                     if (encode)
                     {
-                        result = Convert.ToString(Convert.ToInt32(letterBinary, 2)
-                                                  + Convert.ToInt32(gammaBinary, 2), 2)
-                            .PadLeft(6, '0');
+                        result = Xor(letterBinary, gammaBinary);
                     }
                     else
                     {
-                        result = Convert.ToString(Convert.ToInt32(letterBinary, 2)
-                                                  - Convert.ToInt32(gammaBinary, 2), 2)
-                            .PadLeft(6, '0');
+                        result = Xor(letterBinary, gammaBinary);
                     }
                     char encodedLetter = gammaMatrix.First(entry => entry.Value == result).Key;
                     if (gammaSequenceIndex == gammaSequence.Length - 1)
@@ -95,6 +65,34 @@ namespace EncodingApp.logic
             }
             
             return builder.ToString();
+        }
+
+        private string Xor(string firstOperand, string secondOperand)
+        {
+            string result = "";
+            for (int i = 0; i < firstOperand.Length; i++)
+            {
+                if (firstOperand[i] != secondOperand[i])
+                {
+                    result += '1';
+                }
+                else
+                {
+                    result += '0';
+                }
+            }
+
+            return result;
+        }
+        
+        private void DefineGammaSequence(string key)
+        {
+            gammaSequence = new int[key.Length];
+            string alphabet = 
+            for (int i = 0; i < key.Length; i++)
+            {
+                gammaSequence[i] = alphabet.IndexOf(key[i]);
+            }
         }
     }
 }
